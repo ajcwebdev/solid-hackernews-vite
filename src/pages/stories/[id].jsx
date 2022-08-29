@@ -1,6 +1,6 @@
 // src/pages/stories/[id].jsx
 
-import { useData } from "solid-app-router"
+import { useRouteData } from "solid-app-router"
 import { createSignal } from "solid-js"
 
 const pluralize = (n) => n + (n === 1 ? " reply" : " replies")
@@ -31,7 +31,7 @@ function Comment(props) {
 }
 
 export default function Story() {
-  const story = useData()
+  const story = useRouteData()
   return (
     <Show when={story()}>
       <div class="item-view">
